@@ -1,0 +1,57 @@
+Do as follows to overcome this issue, this works for me. Create project as usual than follow below steps
+
+Step-1:
+Right Click on your Project -> Properties -> Android -> In Library panel, remove appcompat_v7 library, Apply and Ok
+
+Step-2:
+In Project goto res -> values -> style.xml
+
+In line <style name="AppBaseTheme" parent="Theme.AppCompat.Light"> change parent value from Theme.AppCompat.Light to android:Theme.Light
+
+Step-3:
+In Project goto res -> values-v11 -> style.xml
+
+In line <style name="AppBaseTheme" parent="Theme.AppCompat.Light"> change parent value from Theme.AppCompat.Light to android:Theme.Holo.Light
+
+Step-4:
+In Project goto res -> values-v14 -> style.xml
+
+In line <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"> change parent value from Theme.AppCompat.Light.DarkActionBar to android:Theme.Holo.Light.DarkActionBar
+
+Step-5:
+In Project goto menu -> main.xml remove these lines in menu tag:
+
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.example.test.MainActivity" 
+and in item tag change this line from app:showAsAction="never" to android:showAsAction="never"
+
+In project, goto res -> layout -> delete fragment.xml
+
+Step-6:
+In MainActivity extends Activity not ActionBarActivity and finally your MainActivity.java after remove unnecessary code, looks like this:
+
+package com.example.test;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+
+public class MainActivity extends Activity {
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+
+    // Inflate the menu; this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.main, menu);
+    return true;
+}
+
+}
