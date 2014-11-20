@@ -1,0 +1,8 @@
+Descrição do Trabalho
+
+Conforme demostrado na Figura 1, criar telas com as suas respectivas funções.
+- Layout obrigatoriamente deve seguir o mesmo layout demostrado na Figura 1.
+- Deve conter os campos: Nome, Sobrenome, Apelido, Sexo, Telefone, E-mail e Foto.
+- O campo Foto, deve carregar uma imagem da mídia do celular. Ganha pontos extras quem conseguir dar opção de tirar foto e pegar imagem da mídia, com suas respectivas funções funcionando.
+- Na tela de “Ver Usuário” deve-se mostrar o usuário que acabou de ser cadastrado. Não é necessário criar listas de usuários. Quem quiser dar a possibilidade de cadastrar mais usuários ganha pontos extras.
+- Não é necessário cadastra os dados em arquivos ou em banco de dados.
